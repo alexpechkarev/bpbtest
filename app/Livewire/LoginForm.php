@@ -33,7 +33,14 @@ class LoginForm extends Component
     public function save()
     {
         sleep(1);
+        $validated = $this->validate([
+          'email' => 'required|min:3',
+          'password' => 'required|min:3'
+        ]);
 
+        Post::create($validated);
+
+        return redirect()->to('/posts');
     }
 
 
