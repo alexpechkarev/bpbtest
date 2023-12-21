@@ -43,7 +43,8 @@ class LoginForm extends Component
 
         
         $this->reset(['email', 'password']);
-        
+
+        request()->session()->flash('status', 'Form successfully validated.');
     }
 
    
