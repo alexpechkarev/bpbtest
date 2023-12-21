@@ -36,7 +36,7 @@ class LoginForm extends Component
     {
         sleep(1);
         $validated = $this->validate([
-          'email' => 'email:rfc,dns',
+          'email' => 'email:rfc,dns|required',
           'password' => 'required|min:3'
         ]);
 
