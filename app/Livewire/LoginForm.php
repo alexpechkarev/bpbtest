@@ -42,7 +42,7 @@ class LoginForm extends Component
         ]);
 
         
-
+        $this->reset(['email', 'password']);
         
     }
 
