@@ -35,14 +35,15 @@ class LoginForm extends Component
     public function save()
     {
         sleep(1);
+
         $validated = $this->validate([
           'email' => 'email:rfc,dns|required',
           'password' => 'required|min:3'
         ]);
 
-        Post::create($validated);
+        
 
-        return redirect()->to('/two');
+        
     }
 
    
