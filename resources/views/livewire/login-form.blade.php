@@ -34,7 +34,11 @@
                     <input id="email" name="email" type="email" autocomplete="email" wire:model="email"  
                         class="block w-full border-0 rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                 </div>
-                <div>@error('email') {{ $message }} @enderror</div>
+                <div>
+                  @error('email')
+                  <span style="color: red">{{ $message }}</span>
+                  @enderror
+                </div>
             </div>
             
             <div>
@@ -43,7 +47,11 @@
                     <input id="password" name="password" type="password" autocomplete="current-password" wire:model="password"
                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                 </div>
-                <div>@error('password') {{ $message }} @enderror</div>
+                <div>
+                  @error('password') 
+                  <span style="color: red">{{ $message }}</span>
+                  @enderror
+                </div>
             </div>
             
             <div>
