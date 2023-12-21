@@ -36,7 +36,7 @@
                 </div>
                 <div>
                   @error('email')
-                  <span style="color: red">{{ $message }}</span>
+                  <span class="text-red-500">{{ $message }}</span>
                   @enderror
                 </div>
             </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div>
                   @error('password') 
-                  <span style="color: red">{{ $message }}</span>
+                  <span class="text-red-500">{{ $message }}</span>
                   @enderror
                 </div>
             </div>
