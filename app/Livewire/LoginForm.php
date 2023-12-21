@@ -17,7 +17,9 @@ class LoginForm extends Component
         'password'  => '',
     ];
 
+    public $email = '';
 
+    public $password = '';
 
 
     /**
@@ -34,14 +36,16 @@ class LoginForm extends Component
     {
         sleep(1);
         $validated = $this->validate([
-          'email' => 'required|min:3',
+          'email' => 'email:rfc,dns',
           'password' => 'required|min:3'
         ]);
 
         Post::create($validated);
 
-        return redirect()->to('/posts');
+        return redirect()->to('/two');
     }
+
+   
 
 
     /**
