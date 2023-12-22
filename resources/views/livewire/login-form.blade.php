@@ -26,43 +26,52 @@
         @endif
 
  
-        <form class="space-y-6">
+        <form class="space-y-6" wire:submit="save">
             <div>
                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                 <div class="mt-2">
 
-                    <input id="email" name="email" type="email" autocomplete="email"  
-                        class="block w-full border-0 rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <input id="email" name="email" type="email" autocomplete="email" wire:model="email"  
+                        class="block w-full border-0 rounded-md py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 @error('email') ring-red-500 focus:ring-red-500 @enderror">
                 </div>
-
+                <div>
+                  @error('email')
+                  <span class="text-red-500">{{ $message }}</span>
+                  @enderror
+                </div>
             </div>
-
+            
             <div>
                 <div class="mt-2">
-                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
-                    <input id="password" name="password" type="password" autocomplete="current-password" 
-                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                    <input id="password" name="password" type="password" autocomplete="current-password" wire:model="password"
+                        class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 @error('password') ring-red-500 focus:ring-red-500 @enderror">
+                </div>
+                <div>
+                  @error('password') 
+                  <span class="text-red-500">{{ $message }}</span>
+                  @enderror
                 </div>
             </div>
-
+            
             <div>
-                <button type="submit"
+                <button type="submit" wire:submit="save"
                     class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:opacity-70">
                 
-
+                  <div wire:loading>
                     {{-- Spinner --}}
-                    {{-- <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 24 24" wire:loading>
+                     <svg wire:loading class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" >
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor"
                             d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
                         </path>
                     </svg>
-                    Processing... --}}
-                    
-
-                    
+                    Processing...
+                  </div>
+                  <div wire:loading.remove>
                     Sign in
+                  </div>
                     
                 </button>
             </div>

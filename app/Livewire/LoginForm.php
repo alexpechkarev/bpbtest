@@ -17,7 +17,9 @@ class LoginForm extends Component
         'password'  => '',
     ];
 
+    public $email = '';
 
+    public $password = '';
 
 
     /**
@@ -34,7 +36,18 @@ class LoginForm extends Component
     {
         sleep(1);
 
+        $validated = $this->validate([
+          'email' => 'email:rfc,dns|required',
+          'password' => 'required|min:3'
+        ]);
+
+        
+        $this->reset(['email', 'password']);
+
+        request()->session()->flash('status', 'Form successfully validated.');
     }
+
+   
 
 
     /**

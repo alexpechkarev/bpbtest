@@ -6,8 +6,11 @@ export default {
     "./resources/**/*.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xsm: "0px",
+      },
+    },
   },
-  plugins: [require('@tailwindcss/forms')],
-}
-
+  plugins: [require("@tailwindcss/forms")],
+};

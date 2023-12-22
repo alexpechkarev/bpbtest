@@ -33,13 +33,13 @@ Route::post('/load', function (Request $request){
 Route::post('/process', function (Request $request) {
 
      // read the request
-
-
+      $num1 = $request->input('a');
+      $num2 = $request->input('b');
     // process the numbers
-
+      $sum = $num1 + $num2;
     
     // return the result
-    return response()->json([]);
+    return response()->json(['sum' => $sum]);
 });
 
 

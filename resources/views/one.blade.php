@@ -13,8 +13,8 @@
 <div class="grid grid-cols-2 gap-6 content-center border p-4 bg-indigo-100 lg:grid-cols-4 lg:content-center lg:h-80">
 
     <div class="p-4 border rounded-md bg-green-100 shadow-sm">Column 1</div>
-    <div class="p-4 border rounded-md bg-green-100 shadow-sm">Column 2</div>
-    <div class="p-4 border rounded-md bg-green-100 shadow-sm">Column 3</div>
+    <div class="p-4 border rounded-md bg-green-100 shadow-sm lg:col-span-1 xsm:col-span-2">Column 2</div>
+    <div class="p-4 border rounded-md bg-green-100 shadow-sm lg:order-none xsm:order-last">Column 3</div>
     <div class="p-4 border rounded-md bg-green-100 shadow-sm">Column 4</div>
 
 </div>
